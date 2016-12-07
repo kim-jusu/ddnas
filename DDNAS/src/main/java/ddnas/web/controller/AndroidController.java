@@ -27,7 +27,7 @@ import org.springframework.stereotype.Controller;
  * @filename : AndroidController.java
  * @author   : ±èÁÖ¼ö
  * @since    : 2016. 12. 3.
- * @version  : 1.0  
+ * @version  : 1.0 
  */
 @Controller
 @RequestMapping("/android")
