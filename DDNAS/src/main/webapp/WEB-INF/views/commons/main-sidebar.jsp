@@ -49,12 +49,6 @@
           </ul>
         </li>
         
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>사고현황</span>
-          </a>
-        </li>
         <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>위험 600ppm</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>경고 500ppm</span></a></li>

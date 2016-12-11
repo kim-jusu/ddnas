@@ -11,8 +11,6 @@ import ddnas.web.model.dao.VentilatorDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sun.swing.internal.plaf.synth.resources.synth_es;
-
 import ddnas.web.model.dto.VentilatorDTO;
 import ddnas.web.ventilator.VentData;
 
@@ -52,14 +50,14 @@ public class VentServiceImpl implements VentService {
 
 	@Override
 	public int powerUp(int ventilCode) {
-		if(!powerControl(ventilCode, 1))
+		if (!powerControl(ventilCode, 1))
 			return 0;
 		return ventilatorDAOImpl.powerUp(ventilCode);
 	}
 
 	@Override
 	public int powerDown(int ventilCode) {
-		if(!powerControl(ventilCode, 0))
+		if (!powerControl(ventilCode, 0))
 			return 0;
 		return ventilatorDAOImpl.powerDown(ventilCode);
 	}
@@ -71,13 +69,13 @@ public class VentServiceImpl implements VentService {
 	 * @disc : w:1번 up x:1번 down y:2번 up z:2번 down
 	 * @date : 2016. 12. 3.
 	 * @param :
-	 * 			@param ventilCode
+	 * @param ventilCode
 	 * @param :
-	 * 			@param state
+	 * @param state
 	 */
 	@Override
 	public boolean powerControl(int ventilCode, int state) {
-		System.err.println(ventilCode +"////"+state);
+		System.err.println(ventilCode + "////" + state);
 		if (ventilCode == 1 && state == 1) {// w
 			ventData.setOverlap("w");
 			this.send("w");
@@ -90,15 +88,16 @@ public class VentServiceImpl implements VentService {
 		} else if (ventilCode == 2 && state == 0) {// z
 			ventData.setOverlap("z");
 			this.send("z");
-		}else if(ventilCode == 3 && state == 1){
+		} else if (ventilCode == 3 && state == 1) {
 			ventData.setOverlap("u");
 			this.send("u");
-		}else if(ventilCode == 3 && state == 0){
+		} else if (ventilCode == 3 && state == 0) {
 			ventData.setOverlap("v");
 			this.send("v");
-		}else
+		} else
 			return false;
-		
+
 		return true;
 	}
+
 }
