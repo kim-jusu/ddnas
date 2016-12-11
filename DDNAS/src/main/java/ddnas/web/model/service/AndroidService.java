@@ -74,4 +74,17 @@ public interface AndroidService {
 	 * @param   : @param coDensity
 	 */
 	public void insertWorkState(String userCode, String coDensity);
+
+	/**
+	 * 
+	 * @author  : 김주수
+	 * @method  : checkDanger
+	 * @disc    : 위험상황 체크
+	 * @date    : 2016. 12. 7.
+	 * @param   : @param coDensity
+	 * @param   : @return
+	 */
+	public int checkDanger(String userCode, String coDensity);
+
+	public void webSocketSendMessage(String userCode, String coDensity) throws IOException, InterruptedException;
 }
